@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Рядом - Психологическая поддержка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (previous styles) ... */
+
+        .help-section {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .help-section img {
+            margin-right: 50px; /* Отступ справа от изображения */
+        }
+
+        .help-icon-link {
+            display: inline-block;
+            width: 200px; /* Ширина миниатюры */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="Логотип Рядом" class="logo">
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="services.html">Услуги</a>
+        <a href="blog.html">Алгоритмическая задача</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="index.html#help">Как получить помощь</a>
+        <a href="https://msph.ru/uslugi/neotlozhnaya-psikhologicheskaya-pomoshch" target="_blank">Полезные ресурсы</a>
+    </nav>
+
+    <main>
+        <h1>Психологическая поддержка (Рядом)</h1>
+        <p>Мы предлагаем онлайн-поддержку для всех, кто нуждается в помощи. Наша команда психологов готова помочь вам справиться с трудностями и найти путь к  самочувствию.</p>
+
+        <h2>Вместе мы можем преодолеть:</h2>
+        <div class="text-frame">
+            <p><strong>• Стресс и тревогу</strong>: Чувствуете ли вы постоянное напряжение, беспокойство или страх? Мы поможем вам научиться управлять своими эмоциями и обрести внутренний покой.</p>
+            <p><strong>• Депрессию</strong>: Если вы чувствуете апатию, утрату интереса к жизни, мы поможем вам вернуть радость и энергию.</p>
+            <p><strong>• Проблемы в отношениях</strong>: Сложности в семье, с партнером, друзьями? Мы поможем вам улучшить коммуникацию и найти гармонию в отношениях.</p>
+            <p><strong>• Посттравматический стресс</strong>: Пережили тяжелую ситуацию и не можете с ней справиться? Мы поддержим вас на пути к восстановлению и поможем избавиться от навязчивых мыслей.</p>
+            <p><strong>• Низкую самооценку</strong>: Чувствуете себя неуверенно? Мы поможем вам повысить самооценку и обрести веру в свои силы.</p>
+            <p><strong>• И многое другое...</strong></p>
+        </div>
+
+        <h3 id="help">Как получить помощь</h3>
+
+        <div class="help-section">
+            <a href="iconn.html" target="_blank" class="help-icon-link">
+                <img src="help-icon.png" alt="Иконка помощи">
+            </a>
+            <p><strong>Чтобы получить помощь, вы можете:</strong></p>
+            <ul>
+                <li>Записаться на онлайн-консультацию с психологом</li>
+                <li>Оставить заявку на форуме поддержки</li>
+                <li>Почитать статьи в нашем блоге</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <script>
+        // JavaScript для определения активного элемента навигации
+        const navLinks = document.querySelectorAll('nav a');
+        const currentUrl = window.location.href;
+
+        navLinks.forEach(link => {
+            if (link.href === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+

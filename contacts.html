@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Рядом - Психологическая поддержка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="logo.png" alt="Логотип Рядом" class="logo">
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="services.html">Услуги</a>
+        <a href="blog.html">Алгоритмическая задача</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="index.html#help">Как получить помощь</a>
+        <a href="https://msph.ru/uslugi/neotlozhnaya-psikhologicheskaya-pomoshch" target="_blank">Полезные ресурсы</a>
+    </nav>
+
+  <title>Форма обратной связи</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="hidden"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #FFC840;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Форма обратной связи</h1>
+  <form id="orderForm">
+    <label for="customerName">Ваше имя:</label>
+    <input type="text" id="customerName" name="customerName" required>
+
+    <label for="Help">Вариант получения помощи:</label>
+    <input type="number" id="orderNumber" name="orderNumber" required>
+
+    <label for="freeDate">Свободная дата:</label>
+    <input type="date" id="orderDate" name="orderDate" required>
+
+    <label>Вариант консультации:</label>
+    <input type="radio" id="deliveryCourier" name="deliveryMethod" value="courier" checked>
+    <label for="deliveryCourier">Онлайн</label>
+    <input type="radio" id="deliverySelf" name="deliveryMethod" value="self">
+    <label for="deliverySelf">Оффлайн</label>
+
+    <label for="orderNotes">Опишите ваш запрос:</label>
+    <textarea id="orderNotes" name="orderNotes"></textarea>
+
+    <label for="agreeTerms">Согласен с условиями:</label>
+    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+
+    <input type="hidden" id="orderStatus" name="orderStatus" value="new">
+
+    <button type="submit">Отправить заявку</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById("orderForm");
+    const resultDiv = document.getElementById("result");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      // Собираем данные из формы
+      const formData = new FormData(form);
+
+      // Преобразуем FormData в объект
+      const orderData = {};
+      for (const [key, value] of formData.entries()) {
+        orderData[key] = value;
+      }
+
+      // Формируем строку для URL-запроса
+      const searchParams = new URLSearchParams(orderData);
+      const url = `https://www.google.com/search?q=${searchParams.toString()}`;
+
+      // Открываем новое окно с URL
+      window.open(url, '_blank');
+
+      resultDiv.textContent = "Заявка отправлена!";
+    });
+  </script>
+
+</body>
+</html>

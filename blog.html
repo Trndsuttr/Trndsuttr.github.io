@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Определение типа числа</title>
+</head>
+<body>
+<img src="logo.png" alt="Логотип Рядом" class="logo">
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="services.html">Услуги</a>
+        <a href="blog.html">Алгоритмическая задача</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="index.html#help">Как получить помощь</a>
+        <a href="https://msph.ru/uslugi/neotlozhnaya-psikhologicheskaya-pomoshch" target="_blank">Полезные ресурсы</a>
+    </nav>
+  <h1>Определить тип вещественного числа (положительное, отрицательное, ноль)</h1>
+
+  <label for="numberInput">Введите вещественное число:</label>
+  <input type="number" id="numberInput">
+
+  <button id="checkButton">Проверить</button>
+
+  <p id="result"></p>
+
+  <script>
+    function определитьТипЧисла(число) {
+      if (число > 0) {
+        return "Положительное";
+      } else if (число < 0) {
+        return "Отрицательное";
+      } else {
+        return "Ноль";
+      }
+    }
+
+    const numberInput = document.getElementById("numberInput");
+    const checkButton = document.getElementById("checkButton");
+    const result = document.getElementById("result");
+
+    checkButton.addEventListener("click", () => {
+      const число = parseFloat(numberInput.value);
+      const типЧисла = определитьТипЧисла(число);
+      result.textContent = `Число ${число} - ${типЧисла}`;
+      // Создание новой вкладки браузера
+      window.open(`https://www.google.com/search?q=Число+${число}+-${типЧисла}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>
+
